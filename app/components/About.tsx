@@ -41,7 +41,7 @@ export default function About() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline underline-offset-4"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
             >
               Me contacter
               <span aria-hidden>→</span>

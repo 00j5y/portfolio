@@ -112,7 +112,6 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 1 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted text-xs"
         >
-          <span>Défiler</span>
           <span className="block w-px h-8 bg-border mx-auto animate-bounce" />
         </motion.div>
       </div>

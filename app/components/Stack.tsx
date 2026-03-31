@@ -52,7 +52,7 @@ export default function Stack() {
       {/* Marquee */}
       <div className="relative flex overflow-x-hidden">
         <div
-          className="flex gap-8 animate-marquee"
+          className="flex animate-marquee"
           style={{ width: "max-content" }}
         >
           {items.map((tech, i) => {

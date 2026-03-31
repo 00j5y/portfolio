@@ -36,16 +36,6 @@ const contactLinks = [
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.4 } },
-};
-
 export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-bg">
@@ -62,22 +52,19 @@ export default function Contact() {
           </p>
         </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto"
-        >
-          {contactLinks.map((link) => {
+        <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+          {contactLinks.map((link, i) => {
             const Icon = link.icon;
             return (
               <motion.a
                 key={link.label}
-                variants={item}
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 hover:bg-primary-light/30 transition-all duration-200 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
@@ -90,7 +77,7 @@ export default function Contact() {
               </motion.a>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* Bouton CV */}
         <div className="text-center mt-10">

@@ -1,4 +1,8 @@
-// Placeholder — à remplacer par Jay avec ses vraies expériences
+"use client";
+
+import { motion } from "framer-motion";
+import { FiBook, FiBriefcase, FiCode } from "react-icons/fi";
+
 const experiences = [
   {
     date: "2024 — Présent",
@@ -26,22 +30,31 @@ const experiences = [
   },
 ];
 
-const typeLabels: Record<string, string> = {
-  formation: "Formation",
-  job:       "Expérience",
-  stage:     "Stage",
-};
-
-const typeColors: Record<string, string> = {
-  formation: "bg-primary-light text-primary",
-  job:       "bg-surface text-muted border border-border",
-  stage:     "bg-green-100 text-green-700",
+const typeConfig: Record<string, { label: string; icon: React.ElementType; badge: string; border: string }> = {
+  formation: {
+    label: "Formation",
+    icon: FiBook,
+    badge: "bg-primary text-white",
+    border: "border-primary/30",
+  },
+  job: {
+    label: "Expérience",
+    icon: FiBriefcase,
+    badge: "bg-text text-white",
+    border: "border-border",
+  },
+  stage: {
+    label: "Stage",
+    icon: FiCode,
+    badge: "bg-green-600 text-white",
+    border: "border-green-200",
+  },
 };
 
 export default function Experience() {
   return (
     <section id="experience" className="py-24 bg-surface">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
             Parcours
@@ -51,33 +64,55 @@ export default function Experience() {
           </h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative max-w-2xl mx-auto">
-          {/* Ligne verticale */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-border" />
+        <div className="relative">
+          {/* Fil conducteur — ligne verticale dégradée */}
+          <div
+            className="absolute left-4 top-3 bottom-3 w-0.5"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent, #7c3aed 8%, #7c3aed 92%, transparent)",
+            }}
+          />
 
-          <ol className="space-y-10 pl-12">
-            {experiences.map((exp, i) => (
-              <li key={i} className="relative">
-                {/* Dot */}
-                <span className="absolute -left-8 top-1 w-3 h-3 rounded-full bg-primary border-2 border-bg" />
-
-                {/* Card */}
-                <div className="glass-card rounded-2xl p-5 space-y-2">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span
-                      className={`px-2 py-0.5 rounded-full text-xs font-medium ${typeColors[exp.type]}`}
-                    >
-                      {typeLabels[exp.type]}
-                    </span>
-                    <span className="text-xs text-muted">{exp.date}</span>
+          <ol className="space-y-10">
+            {experiences.map((exp, i) => {
+              const cfg = typeConfig[exp.type] ?? typeConfig.job;
+              const Icon = cfg.icon;
+              return (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.4, delay: i * 0.12 }}
+                  className="relative pl-14"
+                >
+                  {/* Badge icône sur le fil */}
+                  <div
+                    className={`absolute left-0 top-0 w-8 h-8 rounded-full ${cfg.badge} flex items-center justify-center shadow-md`}
+                  >
+                    <Icon size={14} />
                   </div>
-                  <h3 className="font-semibold text-text">{exp.role}</h3>
-                  <p className="text-sm text-primary font-medium">{exp.company}</p>
-                  <p className="text-sm text-muted leading-relaxed">{exp.description}</p>
-                </div>
-              </li>
-            ))}
+
+                  {/* Card */}
+                  <div
+                    className={`glass-card rounded-2xl p-5 space-y-2 border-l-4 ${cfg.border}`}
+                  >
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span
+                        className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${cfg.badge}`}
+                      >
+                        {cfg.label}
+                      </span>
+                      <span className="text-xs text-muted">{exp.date}</span>
+                    </div>
+                    <h3 className="font-semibold text-text">{exp.role}</h3>
+                    <p className="text-sm text-primary font-medium">{exp.company}</p>
+                    <p className="text-sm text-muted leading-relaxed">{exp.description}</p>
+                  </div>
+                </motion.li>
+              );
+            })}
           </ol>
         </div>
       </div>

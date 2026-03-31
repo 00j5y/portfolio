@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FiStar, FiGitBranch, FiExternalLink, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import type { GitHubRepo } from "@/app/lib/github";
@@ -92,10 +92,30 @@ function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
 export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const max = repos.length - 1;
+  const updateScrollState = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, [updateScrollState]);
 
   const scrollTo = (i: number) => {
+    const max = repos.length - 1;
     const clamped = Math.max(0, Math.min(i, max));
     setIndex(clamped);
     trackRef.current?.scrollTo({
@@ -124,7 +144,7 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
           onClick={() => scrollTo(index - 1)}
-          disabled={index === 0}
+          disabled={!canScrollLeft}
           className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           aria-label="Précédent"
         >
@@ -149,7 +169,7 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
 
         <button
           onClick={() => scrollTo(index + 1)}
-          disabled={index === max}
+          disabled={!canScrollRight}
           className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           aria-label="Suivant"
         >
