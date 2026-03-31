@@ -1,0 +1,74 @@
+"use client";
+
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiPython,
+  SiDocker,
+  SiGit,
+  SiTailwindcss,
+  SiLinux,
+  SiNodedotjs,
+  SiPostgresql,
+  SiGithub,
+  SiVite,
+} from "react-icons/si";
+
+const techs = [
+  { icon: SiReact,      label: "React" },
+  { icon: SiNextdotjs,  label: "Next.js" },
+  { icon: SiTypescript, label: "TypeScript" },
+  { icon: SiTailwindcss,label: "Tailwind CSS" },
+  { icon: SiPython,     label: "Python" },
+  { icon: SiNodedotjs,  label: "Node.js" },
+  { icon: SiDocker,     label: "Docker" },
+  { icon: SiPostgresql, label: "PostgreSQL" },
+  { icon: SiGit,        label: "Git" },
+  { icon: SiGithub,     label: "GitHub" },
+  { icon: SiLinux,      label: "Linux" },
+  { icon: SiVite,       label: "Vite" },
+];
+
+// Duplicated for seamless infinite loop
+const items = [...techs, ...techs];
+
+export default function Stack() {
+  return (
+    <section id="stack" className="py-16 bg-bg border-y border-border overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
+        <span className="text-sm font-medium text-primary uppercase tracking-widest">
+          Technologies
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-bold text-text mt-2">
+          Ma stack technique
+        </h2>
+      </div>
+
+      {/* Marquee */}
+      <div className="relative flex overflow-x-hidden">
+        <div
+          className="flex gap-8 animate-marquee"
+          style={{ width: "max-content" }}
+        >
+          {items.map((tech, i) => {
+            const Icon = tech.icon;
+            return (
+              <div
+                key={`${tech.label}-${i}`}
+                className="flex flex-col items-center gap-2 px-4 group"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-surface border border-border flex items-center justify-center text-2xl text-muted group-hover:text-primary group-hover:border-primary-light group-hover:bg-primary-light transition-all duration-200 shrink-0">
+                  <Icon />
+                </div>
+                <span className="text-xs text-muted group-hover:text-primary transition-colors whitespace-nowrap">
+                  {tech.label}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
