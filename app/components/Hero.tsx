@@ -26,11 +26,24 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Fond — radial gradient blanc → violet */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]" />
+      {/* Fond — dégradé radial blanc → violet */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%)",
+        }}
+      />
 
       {/* Fond — grille de points avec masque radial (par-dessus le gradient) */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "radial-gradient(#e5e7eb 1px, transparent 1px)",
+          backgroundSize: "16px 16px",
+          maskImage: "radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%)",
+        }}
+      />
 
       {/* Contenu */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
