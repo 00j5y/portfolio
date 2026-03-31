@@ -94,13 +94,17 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
   const [index, setIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [dotCount, setDotCount] = useState(repos.length);
 
   const updateScrollState = useCallback(() => {
     const el = trackRef.current;
     if (!el) return;
     setCanScrollLeft(el.scrollLeft > 4);
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
-  }, []);
+    // Nombre de dots = positions utiles : repos visibles dans le viewport
+    const visible = Math.floor(el.clientWidth / (CARD_WIDTH + CARD_GAP));
+    setDotCount(Math.max(1, repos.length - visible + 1));
+  }, [repos.length]);
 
   useEffect(() => {
     const el = trackRef.current;
@@ -153,7 +157,7 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
 
         {/* Indicateurs */}
         <div className="flex gap-1.5">
-          {repos.map((_, i) => (
+          {Array.from({ length: dotCount }, (_, i) => (
             <button
               key={i}
               onClick={() => scrollTo(i)}

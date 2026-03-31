@@ -50,19 +50,20 @@ export default function Stack() {
       </div>
 
       {/* Marquee */}
-      <div className="relative flex overflow-x-hidden">
+      <div className="relative overflow-x-hidden">
         <div
           className="flex animate-marquee"
-          style={{ width: "max-content" }}
+          style={{ width: "200vw" }}
         >
           {items.map((tech, i) => {
             const Icon = tech.icon;
             return (
               <div
                 key={`${tech.label}-${i}`}
-                className="flex flex-col items-center gap-2 px-4 group"
+                className="flex flex-col items-center gap-3 group"
+                style={{ width: "calc(100vw / 14)" }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-surface border border-border flex items-center justify-center text-2xl text-muted group-hover:text-primary group-hover:border-primary-light group-hover:bg-primary-light transition-all duration-200 shrink-0">
+                <div className="w-16 h-16 rounded-2xl bg-surface border border-border flex items-center justify-center text-3xl text-muted group-hover:text-primary group-hover:border-primary-light group-hover:bg-primary-light transition-all duration-200 shrink-0">
                   <Icon />
                 </div>
                 <span className="text-xs text-muted group-hover:text-primary transition-colors whitespace-nowrap">
