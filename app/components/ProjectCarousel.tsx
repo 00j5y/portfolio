@@ -149,6 +149,7 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
         <button
           onClick={() => scrollTo(index - 1)}
           disabled={!canScrollLeft}
+          suppressHydrationWarning
           className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           aria-label="Précédent"
         >
@@ -174,6 +175,7 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
         <button
           onClick={() => scrollTo(index + 1)}
           disabled={!canScrollRight}
+          suppressHydrationWarning
           className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           aria-label="Suivant"
         >
