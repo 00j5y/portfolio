@@ -7,15 +7,14 @@ import {
   FiLinkedin,
   FiDownload,
 } from "react-icons/fi";
-import { FaDiscord, FaTelegram } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
 
-// Placeholder — à remplacer par Jay avec ses vraies coordonnées
 const contactLinks = [
   {
     icon: FiMail,
     label: "Email",
-    value: "email@example.com",
-    href: "mailto:email@example.com",
+    value: "contact@jaylheronde.fr",
+    href: "mailto:contact@jaylheronde.fr",
   },
   {
     icon: FiGithub,
@@ -26,20 +25,14 @@ const contactLinks = [
   {
     icon: FiLinkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/...",
-    href: "https://linkedin.com/in/placeholder",
+    value: "Jay L'héronde",
+    href: "https://www.linkedin.com/in/jay-lheronde/",
   },
   {
     icon: FaDiscord,
     label: "Discord",
-    value: "@placeholder",
-    href: "#",
-  },
-  {
-    icon: FaTelegram,
-    label: "Telegram",
-    value: "@placeholder",
-    href: "https://t.me/placeholder",
+    value: "@8yz",
+    href: "https://discord.com/users/613123580603138048",
   },
 ];
 
@@ -74,7 +67,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto"
         >
           {contactLinks.map((link) => {
             const Icon = link.icon;

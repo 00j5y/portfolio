@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-const FULL_NAME = "Jay L'HÉRONDE";
+const FULL_NAME = "Jay L'héronde";
 const TYPEWRITER_SPEED = 80;
 
 export default function Hero() {
@@ -25,19 +25,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg pt-16">
-      {/* Orbes de fond */}
-      <div
-        className="pointer-events-none absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl animate-float"
-        style={{ background: "var(--color-primary)" }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full opacity-15 blur-3xl animate-float"
-        style={{
-          background: "var(--color-primary-mid)",
-          animationDelay: "3s",
-        }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      {/* Fond — radial gradient blanc → violet */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]" />
+
+      {/* Fond — grille de points avec masque radial (par-dessus le gradient) */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
       {/* Contenu */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -67,7 +60,7 @@ export default function Hero() {
           />
         </motion.h1>
 
-        {/* Sous-titre placeholder */}
+        {/* Sous-titre */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +86,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 rounded-full border border-border text-text font-medium hover:border-primary hover:text-primary transition-colors"
+            className="px-8 py-3 rounded-full border border-border text-text font-medium hover:border-primary hover:text-primary transition-colors bg-white/60 backdrop-blur-sm"
           >
             Me contacter
           </a>

@@ -32,9 +32,9 @@ export default function Nav() {
         {/* Logo */}
         <a
           href="#"
-          className="font-semibold text-lg tracking-tight text-text hover:text-primary transition-colors"
+          className="font-semibold text-lg tracking-tight text-primary hover:text-primary-dark transition-colors"
         >
-          Jay L&apos;héronde
+          JL.
         </a>
 
         {/* Desktop links */}
@@ -49,14 +49,6 @@ export default function Nav() {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href="#contact"
-              className="ml-2 px-4 py-1.5 rounded-full text-sm font-medium bg-primary text-white hover:bg-primary-dark transition-colors"
-            >
-              Me contacter
-            </a>
-          </li>
         </ul>
 
         {/* Mobile burger */}
@@ -86,15 +78,6 @@ export default function Nav() {
                 </a>
               </li>
             ))}
-            <li className="mt-2">
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="block px-4 py-2 rounded-full text-sm font-medium text-center bg-primary text-white hover:bg-primary-dark transition-colors"
-              >
-                Me contacter
-              </a>
-            </li>
           </ul>
         </div>
       )}
