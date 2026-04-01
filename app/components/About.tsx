@@ -43,13 +43,8 @@ export default function About() {
           </div>
 
           {/* Photo */}
-          <div className="flex justify-center md:justify-end">
-            <div className="w-64 h-80 rounded-3xl glass-card border-2 border-dashed border-primary/30 flex flex-col items-center justify-center gap-3 text-muted select-none">
-              <span className="text-5xl">🧑‍💻</span>
-              <span className="text-xs text-center px-4 leading-relaxed">
-                Photo à venir
-              </span>
-            </div>
+          <div className="w-full aspect-square rounded-3xl bg-primary flex items-center justify-center select-none">
+            <span className="text-white/80 text-sm font-medium">Photo à venir</span>
           </div>
         </div>
       </div>
