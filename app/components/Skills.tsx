@@ -1,36 +1,25 @@
-import { FiCode, FiCpu, FiSettings } from "react-icons/fi";
+import { FiLayout, FiServer, FiTerminal, FiBox } from "react-icons/fi";
 
 const categories = [
   {
-    icon: FiCode,
-    title: "Développement web",
-    items: [
-      "Interfaces React / Next.js",
-      "APIs REST",
-      "Bases de données relationnelles",
-      "TypeScript strict",
-      "Responsive & accessibilité",
-    ],
+    icon: FiLayout,
+    title: "Développement Front-end",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
-    icon: FiCpu,
-    title: "Automatisation & IA",
-    items: [
-      "Scripts Python",
-      "Intégration d'APIs LLM",
-      "Pipelines de traitement de données",
-      "Bots & agents autonomes",
-    ],
+    icon: FiServer,
+    title: "Backend & Base de Données",
+    items: ["Node.js", "PHP", "PostgreSQL", "MySQL", "Supabase"],
   },
   {
-    icon: FiSettings,
-    title: "Outils & DevOps",
-    items: [
-      "Git & GitHub (branches, PRs)",
-      "Docker & conteneurisation",
-      "Linux en ligne de commande",
-      "CI/CD (GitHub Actions)",
-    ],
+    icon: FiTerminal,
+    title: "Langages de Programmation",
+    items: ["TypeScript / JavaScript", "Python", "PHP", "C", "SQL"],
+  },
+  {
+    icon: FiBox,
+    title: "Architecture & Méthodologies",
+    items: ["Docker & virtualisation", "Git & versionnage", "Linux", "Agile / Scrum"],
   },
 ];
 
@@ -47,7 +36,7 @@ export default function Skills() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {categories.map((cat) => {
             const Icon = cat.icon;
             return (
