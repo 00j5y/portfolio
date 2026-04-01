@@ -52,7 +52,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
           {contactLinks.map((link, i) => {
             const Icon = link.icon;
             return (
@@ -72,7 +72,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-muted">{link.label}</p>
-                  <p className="text-sm font-medium text-text truncate">{link.value}</p>
+                  <p className="text-sm font-medium text-text break-all">{link.value}</p>
                 </div>
               </motion.a>
             );
