@@ -59,7 +59,7 @@ export default function Experience() {
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
             Parcours
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text mt-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mt-2">
             Mes expériences
           </h2>
         </div>
@@ -85,7 +85,7 @@ export default function Experience() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.4, delay: i * 0.12 }}
-                  className="relative pl-14"
+                  className="relative pl-12 sm:pl-14"
                 >
                   {/* Badge icône sur le fil */}
                   <div

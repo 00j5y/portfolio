@@ -44,26 +44,22 @@ export default function Stack() {
         <span className="text-sm font-medium text-primary uppercase tracking-widest">
           Technologies
         </span>
-        <h2 className="text-3xl sm:text-4xl font-bold text-text mt-2">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mt-2">
           Ma stack technique
         </h2>
       </div>
 
       {/* Marquee */}
       <div className="relative overflow-x-hidden">
-        <div
-          className="flex animate-marquee"
-          style={{ width: "200vw" }}
-        >
+        <div className="flex animate-marquee w-fit">
           {items.map((tech, i) => {
             const Icon = tech.icon;
             return (
               <div
                 key={`${tech.label}-${i}`}
-                className="flex flex-col items-center gap-3 group"
-                style={{ width: "calc(100vw / 14)" }}
+                className="flex flex-col items-center gap-3 group w-20 sm:w-24 shrink-0"
               >
-                <div className="w-16 h-16 rounded-2xl bg-surface border border-border flex items-center justify-center text-3xl text-muted group-hover:text-primary group-hover:border-primary-light group-hover:bg-primary-light transition-all duration-200 shrink-0">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl text-muted group-hover:text-primary group-hover:border-primary-light group-hover:bg-primary-light transition-all duration-200 shrink-0">
                   <Icon />
                 </div>
                 <span className="text-xs text-muted group-hover:text-primary transition-colors whitespace-nowrap">

@@ -18,7 +18,6 @@ const LANG_COLORS: Record<string, string> = {
   C:           "bg-slate-100 text-slate-700",
 };
 
-const CARD_WIDTH = 340;
 const CARD_GAP = 24;
 
 function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
@@ -36,8 +35,7 @@ function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
       whileHover={{ y: -4 }}
-      className="group glass-card rounded-2xl p-6 flex flex-col gap-4 shrink-0 cursor-pointer"
-      style={{ width: CARD_WIDTH }}
+      className="group glass-card rounded-2xl p-6 flex flex-col gap-4 shrink-0 cursor-pointer w-[calc(100vw-4rem)] sm:w-[340px]"
     >
       {/* En-tête */}
       <div className="flex items-start justify-between gap-2">
@@ -96,17 +94,22 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [dotCount, setDotCount] = useState(repos.length);
 
+  const getCardWidth = () => {
+    const card = trackRef.current?.querySelector<HTMLElement>("a");
+    return card?.offsetWidth ?? 340;
+  };
+
   const updateScrollState = useCallback(() => {
     const el = trackRef.current;
     if (!el) return;
+    const cardWidth = getCardWidth();
     setCanScrollLeft(el.scrollLeft > 4);
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
-    // Nombre de dots = positions utiles : repos visibles dans le viewport
-    const visible = Math.floor(el.clientWidth / (CARD_WIDTH + CARD_GAP));
+    const visible = Math.floor(el.clientWidth / (cardWidth + CARD_GAP));
     setDotCount(Math.max(1, repos.length - visible + 1));
-    // Sync l'index actif sur la position de scroll (trackpad, touch, etc.)
-    const currentIndex = Math.round(el.scrollLeft / (CARD_WIDTH + CARD_GAP));
+    const currentIndex = Math.round(el.scrollLeft / (cardWidth + CARD_GAP));
     setIndex(currentIndex);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [repos.length]);
 
   useEffect(() => {
@@ -126,7 +129,7 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
     const clamped = Math.max(0, Math.min(i, max));
     setIndex(clamped);
     trackRef.current?.scrollTo({
-      left: clamped * (CARD_WIDTH + CARD_GAP),
+      left: clamped * (getCardWidth() + CARD_GAP),
       behavior: "smooth",
     });
   };
