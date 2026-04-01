@@ -82,8 +82,9 @@ export default function Contact() {
         {/* Bouton CV */}
         <div className="text-center mt-10">
           <a
-            href="/cv.pdf"
-            download
+            href="https://cv.jaylheronde.fr"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
           >
             <FiDownload size={16} />
