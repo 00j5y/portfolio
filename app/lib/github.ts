@@ -12,8 +12,9 @@ export interface GitHubRepo {
 
 export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
   const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=12&type=public`,
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100&type=public`,
     {
+      cache: "force-cache",
       next: { revalidate: 3600 },
       headers: {
         Accept: "application/vnd.github+json",
@@ -26,7 +27,5 @@ export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
 
   const repos: GitHubRepo[] = await res.json();
 
-  return repos
-    .filter((r) => !r.name.includes("portfolio") && r.description !== null)
-    .slice(0, 6);
+  return repos.filter((r) => r.name !== "00j5y");
 }
