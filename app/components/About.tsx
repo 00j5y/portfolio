@@ -1,9 +1,3 @@
-const stats = [
-  { value: "2+", label: "ans de code" },
-  { value: "X", label: "projets réalisés" },
-  { value: "BUT 2", label: "Informatique" },
-];
-
 export default function About() {
   return (
     <section id="about" className="py-24 bg-surface">
@@ -48,17 +42,14 @@ export default function About() {
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="glass-card rounded-2xl p-6 flex flex-col gap-1"
-              >
-                <span className="text-4xl font-bold gradient-text">{stat.value}</span>
-                <span className="text-muted text-sm">{stat.label}</span>
-              </div>
-            ))}
+          {/* Photo */}
+          <div className="flex justify-center md:justify-end">
+            <div className="w-64 h-80 rounded-3xl glass-card border-2 border-dashed border-primary/30 flex flex-col items-center justify-center gap-3 text-muted select-none">
+              <span className="text-5xl">🧑‍💻</span>
+              <span className="text-xs text-center px-4 leading-relaxed">
+                Photo à venir
+              </span>
+            </div>
           </div>
         </div>
       </div>
