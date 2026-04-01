@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "@/app/components/ui/Logo";
 
 const links = [
   { label: "À propos", href: "#about" },
@@ -32,8 +31,11 @@ export default function Nav() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="hover:opacity-80 transition-opacity">
-          <Logo size={34} />
+        <a
+          href="#"
+          className="font-semibold text-lg tracking-tight text-primary hover:text-primary-dark transition-colors"
+        >
+          JL.
         </a>
 
         {/* Desktop links */}
