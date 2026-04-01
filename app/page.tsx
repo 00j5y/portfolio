@@ -67,7 +67,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <SectionCTA text="En savoir plus sur moi" href="#about" />
         <About />
         <SectionCTA text="Voir ma stack technique" href="#stack" />
         <Stack />

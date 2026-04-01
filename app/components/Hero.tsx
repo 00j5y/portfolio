@@ -105,15 +105,27 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        {/* Scroll CTA */}
+        <motion.a
+          href="#about"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted text-xs"
+          className="mt-20 flex flex-col items-center gap-2 group cursor-pointer"
         >
-          <span className="block w-px h-8 bg-border mx-auto animate-bounce" />
-        </motion.div>
+          <span className="text-xs font-medium text-white/80 tracking-widest uppercase group-hover:text-white transition-colors">
+            Découvrir
+          </span>
+          <svg
+            className="w-4 h-4 text-white/60 group-hover:text-white transition-colors animate-bounce"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </motion.a>
       </div>
     </section>
   );
