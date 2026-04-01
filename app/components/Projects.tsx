@@ -12,7 +12,7 @@ export default async function Projects() {
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
             Projets
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mt-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text mt-2">
             Ce que j&apos;ai construit
           </h2>
           <p className="text-muted mt-3 max-w-xl mx-auto text-sm">
