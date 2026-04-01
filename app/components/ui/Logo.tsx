@@ -15,20 +15,28 @@ export default function Logo({ size = 32 }: { size?: number }) {
         </linearGradient>
       </defs>
 
-      <rect width="40" height="40" rx="9" fill="url(#logo-bg)" />
+      {/* Background */}
+      <rect width="40" height="40" rx="10" fill="url(#logo-bg)" />
 
-      <text
-        x="20"
-        y="27"
-        textAnchor="middle"
-        fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif"
-        fontSize="17"
-        fontWeight="700"
-        letterSpacing="-0.5"
-        fill="white"
-      >
-        JL
-      </text>
+      {/* J : tige verticale + crochet vers la gauche */}
+      <path
+        d="M19 9 L19 27 Q19 33 13 33"
+        stroke="white"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+
+      {/* L : tige verticale + pied vers la droite */}
+      <path
+        d="M26 9 L26 33 L34 33"
+        stroke="white"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
     </svg>
   );
 }
