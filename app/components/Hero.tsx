@@ -111,7 +111,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer"
+          className="mt-16 flex flex-col items-center gap-2 group cursor-pointer"
         >
           <span className="text-xs font-medium text-white/80 tracking-widest uppercase group-hover:text-white transition-colors">
             Découvrir
