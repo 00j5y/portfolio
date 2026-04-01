@@ -1,24 +1,31 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FiLayout, FiServer, FiTerminal, FiBox } from "react-icons/fi";
 
 const categories = [
   {
     icon: FiLayout,
     title: "Développement Front-end",
+    description: "J'aime construire des interfaces qui respirent — fluides, accessibles, et agréables à utiliser.",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
     icon: FiServer,
     title: "Backend & Base de Données",
+    description: "De l'API au schéma SQL, je m'assure que les données circulent proprement, vite, et sans surprise.",
     items: ["Node.js", "PHP", "PostgreSQL", "MySQL", "Supabase"],
   },
   {
     icon: FiTerminal,
     title: "Langages de Programmation",
+    description: "Chaque langage a sa logique. J'ai appris à en choisir le bon selon le problème à résoudre.",
     items: ["TypeScript / JavaScript", "Python", "PHP", "C", "SQL"],
   },
   {
     icon: FiBox,
     title: "Architecture & Méthodologies",
+    description: "Coder c'est bien, livrer c'est mieux. Je travaille avec les bons outils pour que ça tourne en prod.",
     items: ["Docker & virtualisation", "Git & versionnage", "Linux", "Agile / Scrum"],
   },
 ];
@@ -37,26 +44,38 @@ export default function Skills() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {categories.map((cat) => {
+          {categories.map((cat, i) => {
             const Icon = cat.icon;
             return (
-              <div
+              <motion.div
                 key={cat.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                whileHover={{ y: -4 }}
                 className="glass-card rounded-2xl p-6 hover:shadow-lg hover:shadow-primary/10 transition-shadow duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-primary mb-4">
                   <Icon size={20} />
                 </div>
-                <h3 className="font-semibold text-text mb-4">{cat.title}</h3>
-                <ul className="space-y-2">
-                  {cat.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-muted">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                <h3 className="font-semibold text-text mb-1">{cat.title}</h3>
+                <p className="text-xs text-muted leading-relaxed mb-4">{cat.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((item, j) => (
+                    <motion.span
+                      key={item}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.25, delay: i * 0.1 + j * 0.06 }}
+                      className="px-3 py-1 rounded-full text-xs font-medium bg-primary-light text-primary border border-primary/10"
+                    >
                       {item}
-                    </li>
+                    </motion.span>
                   ))}
-                </ul>
-              </div>
+                </div>
+              </motion.div>
             );
           })}
         </div>

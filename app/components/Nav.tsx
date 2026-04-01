@@ -7,7 +7,7 @@ const links = [
   { label: "Stack", href: "#stack" },
   { label: "Projets", href: "#projects" },
   { label: "Expériences", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Me contacter", href: "#contact", primary: true },
 ];
 
 export default function Nav() {
@@ -43,7 +43,11 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-3 py-1.5 rounded-full text-sm text-muted hover:text-primary hover:bg-primary-light transition-all duration-200"
+                className={
+                  link.primary
+                    ? "ml-2 px-4 py-1.5 rounded-full text-sm font-medium bg-primary text-white hover:bg-primary-dark transition-all duration-200 shadow-sm shadow-primary/30"
+                    : "px-3 py-1.5 rounded-full text-sm text-muted hover:text-primary hover:bg-primary-light transition-all duration-200"
+                }
               >
                 {link.label}
               </a>
@@ -72,7 +76,11 @@ export default function Nav() {
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-3 py-2 rounded-lg text-sm text-muted hover:text-primary hover:bg-primary-light transition-all"
+                  className={
+                    link.primary
+                      ? "block px-3 py-2 rounded-lg text-sm font-medium text-primary bg-primary-light hover:bg-primary hover:text-white transition-all"
+                      : "block px-3 py-2 rounded-lg text-sm text-muted hover:text-primary hover:bg-primary-light transition-all"
+                  }
                 >
                   {link.label}
                 </a>

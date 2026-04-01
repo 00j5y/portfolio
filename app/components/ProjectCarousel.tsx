@@ -104,6 +104,9 @@ export default function ProjectCarousel({ repos }: { repos: GitHubRepo[] }) {
     // Nombre de dots = positions utiles : repos visibles dans le viewport
     const visible = Math.floor(el.clientWidth / (CARD_WIDTH + CARD_GAP));
     setDotCount(Math.max(1, repos.length - visible + 1));
+    // Sync l'index actif sur la position de scroll (trackpad, touch, etc.)
+    const currentIndex = Math.round(el.scrollLeft / (CARD_WIDTH + CARD_GAP));
+    setIndex(currentIndex);
   }, [repos.length]);
 
   useEffect(() => {
