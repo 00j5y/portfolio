@@ -111,13 +111,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="mt-20 flex flex-col items-center gap-2 group cursor-pointer"
+          className="mt-28 flex flex-col items-center gap-2 group cursor-pointer"
         >
-          <span className="text-xs font-medium text-white/80 tracking-widest uppercase group-hover:text-white transition-colors">
+          <span className="text-sm font-semibold text-white tracking-widest uppercase group-hover:text-white/70 transition-colors">
             Découvrir
           </span>
           <svg
-            className="w-4 h-4 text-white/60 group-hover:text-white transition-colors animate-bounce"
+            className="w-5 h-5 text-white group-hover:text-white/70 transition-colors animate-bounce"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
