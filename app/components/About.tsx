@@ -7,7 +7,7 @@ export default function About() {
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
             À propos
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text mt-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mt-2">
             Qui suis-je ?
           </h2>
         </div>
@@ -43,7 +43,7 @@ export default function About() {
           </div>
 
           {/* Photo */}
-          <div className="w-full aspect-square rounded-3xl bg-primary flex items-center justify-center select-none">
+          <div className="w-full aspect-square rounded-3xl bg-primary flex items-center justify-center select-none max-w-64 mx-auto md:max-w-none">
             <span className="text-white/80 text-sm font-medium">Photo à venir</span>
           </div>
         </div>

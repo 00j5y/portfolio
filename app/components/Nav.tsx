@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
   { label: "À propos", href: "#about" },
@@ -68,27 +69,35 @@ export default function Nav() {
       </nav>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-border px-6 pb-4">
-          <ul className="flex flex-col gap-1 pt-2">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={
-                    link.primary
-                      ? "block px-3 py-2 rounded-lg text-sm font-medium text-primary bg-primary-light hover:bg-primary hover:text-white transition-all"
-                      : "block px-3 py-2 rounded-lg text-sm text-muted hover:text-primary hover:bg-primary-light transition-all"
-                  }
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="md:hidden bg-white/95 backdrop-blur-md border-b border-border px-6 pb-4"
+          >
+            <ul className="flex flex-col gap-1 pt-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      link.primary
+                        ? "block px-3 py-2 rounded-lg text-sm font-medium text-primary bg-primary-light hover:bg-primary hover:text-white transition-all"
+                        : "block px-3 py-2 rounded-lg text-sm text-muted hover:text-primary hover:bg-primary-light transition-all"
+                    }
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
