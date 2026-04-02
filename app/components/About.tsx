@@ -7,7 +7,7 @@ export default function About() {
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
             À propos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mt-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text mt-2">
             Qui suis-je ?
           </h2>
         </div>
