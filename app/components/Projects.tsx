@@ -1,4 +1,5 @@
 import { getGitHubRepos } from "@/app/lib/github";
+import SectionTracker from "@/app/components/ui/SectionTracker";
 import { FiExternalLink } from "react-icons/fi";
 import ProjectCarousel from "@/app/components/ProjectCarousel";
 
@@ -7,6 +8,7 @@ export default async function Projects() {
 
   return (
     <section id="projects" className="py-24 bg-bg overflow-hidden">
+      <SectionTracker section="projects" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">

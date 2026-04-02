@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import SectionTracker from "@/app/components/ui/SectionTracker";
 
 const FULL_NAME = "Jay L'héronde";
 const TYPEWRITER_SPEED = 80;
@@ -26,6 +27,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <SectionTracker section="hero" />
       {/* Fond — dégradé radial blanc → violet */}
       <div
         className="absolute inset-0"

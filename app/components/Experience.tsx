@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiBook, FiBriefcase, FiCode } from "react-icons/fi";
+import SectionTracker from "@/app/components/ui/SectionTracker";
 
 const experiences = [
   {
@@ -54,6 +55,7 @@ const typeConfig: Record<string, { label: string; icon: React.ElementType; badge
 export default function Experience() {
   return (
     <section id="experience" className="py-24 bg-surface">
+      <SectionTracker section="experience" />
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">

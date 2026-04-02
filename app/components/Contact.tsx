@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
+import SectionTracker from "@/app/components/ui/SectionTracker";
 import {
   FiMail,
   FiGithub,
@@ -39,6 +41,7 @@ const contactLinks = [
 export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-bg">
+      <SectionTracker section="contact" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
@@ -61,6 +64,7 @@ export default function Contact() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                onClick={() => track("contact_click", { channel: link.label })}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -85,6 +89,7 @@ export default function Contact() {
             href="https://cv.jaylheronde.fr"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("cv_download")}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
           >
             <FiDownload size={16} />
