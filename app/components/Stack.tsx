@@ -1,5 +1,7 @@
 "use client";
 
+import SectionTracker from "@/app/components/ui/SectionTracker";
+
 import {
   SiReact,
   SiNextdotjs,
@@ -42,6 +44,7 @@ export default function Stack() {
 
   return (
     <section id="stack" className="py-16 bg-bg border-y border-border overflow-hidden">
+      <SectionTracker section="stack" />
       <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
         <span className="text-sm font-medium text-primary uppercase tracking-widest">
           Technologies

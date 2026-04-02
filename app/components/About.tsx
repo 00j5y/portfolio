@@ -1,6 +1,9 @@
+import SectionTracker from "@/app/components/ui/SectionTracker";
+
 export default function About() {
   return (
     <section id="about" className="py-24 bg-surface">
+      <SectionTracker section="about" />
       <div className="max-w-6xl mx-auto px-6">
         {/* En-tête */}
         <div className="text-center mb-16">

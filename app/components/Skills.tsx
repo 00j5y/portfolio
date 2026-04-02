@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiLayout, FiServer, FiTerminal, FiBox } from "react-icons/fi";
+import SectionTracker from "@/app/components/ui/SectionTracker";
 
 const categories = [
   {
@@ -33,6 +34,7 @@ const categories = [
 export default function Skills() {
   return (
     <section className="py-24 bg-surface">
+      <SectionTracker section="skills" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">

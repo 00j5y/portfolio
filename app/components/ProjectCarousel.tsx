@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
 import { FiStar, FiGitBranch, FiExternalLink, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import type { GitHubRepo } from "@/app/lib/github";
 
@@ -30,6 +31,7 @@ function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => track("project_click", { name: repo.name, language: repo.language ?? "unknown" })}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
