@@ -8,7 +8,7 @@ const categories = [
   {
     icon: FiLayout,
     title: "Développement Front-end",
-    description: "J'aime construire des interfaces qui respirent — fluides, accessibles, et agréables à utiliser.",
+    description: "J'aime construire des interfaces qui respirent : fluides, accessibles et agréables à utiliser.",
     items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {

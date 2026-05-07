@@ -19,21 +19,17 @@ export default function About() {
           {/* Texte */}
           <div className="space-y-5 text-muted leading-relaxed">
             <p>
-              {/* Placeholder — à remplacer par Jay */}
-              Étudiant en deuxième année de BUT Informatique, je me passionne pour le développement
-              web et la création de solutions concrètes. Je passe une bonne partie de mon temps
-              libre à coder des projets personnels et à explorer de nouvelles technologies.
+              En deuxième année de BUT Informatique à l&apos;IUT d&apos;Amiens, je code pas mal de
+              mon temps libre. Des projets perso, des trucs pour automatiser ce que je fais à la
+              main, parfois juste pour voir si c&apos;est faisable.
             </p>
             <p>
-              {/* Placeholder — à remplacer par Jay */}
-              Ce qui me motive, c&apos;est de transformer une idée en produit fonctionnel — du
-              premier commit au déploiement. J&apos;aime les interfaces propres, le code maintenable
-              et les outils bien pensés.
+              Ce que j&apos;aime dans le dev, c&apos;est partir d&apos;une idée qui tient en une
+              phrase et finir avec quelque chose qui tourne. Pas forcément parfait, mais qui fait
+              ce qu&apos;il est censé faire.
             </p>
             <p>
-              {/* Placeholder — à remplacer par Jay */}
-              Je cherche une alternance à partir de [DATE] pour mettre mes compétences au service
-              d&apos;une équipe technique et continuer à progresser en conditions réelles.
+              Je cherche une alternance à partir de septembre 2026. Basé à Amiens, permis B.
             </p>
 
             <a

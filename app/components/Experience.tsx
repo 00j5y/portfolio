@@ -6,28 +6,36 @@ import SectionTracker from "@/app/components/ui/SectionTracker";
 
 const experiences = [
   {
-    date: "2024 — Présent",
-    role: "BUT 2 Informatique",
-    company: "IUT — [Ville]",
+    date: "Jan. 2026 – Mars 2026",
+    role: "Stage Développeur Web Full Stack",
+    company: "EI Charlotte Dimpre · Distanciel",
+    type: "stage",
+    description:
+      "J'ai bossé sur Konexx, une plateforme qui met en relation clients et prestataires. Next.js côté frontend, Supabase pour la base de données, Docker pour le déploiement.",
+  },
+  {
+    date: "2024 – Présent",
+    role: "BUT Informatique · Développement d'application (RACA)",
+    company: "IUT d'Amiens · Amiens",
     type: "formation",
     description:
-      "Formation en développement logiciel, réseaux, bases de données et gestion de projet.",
+      "Développement logiciel, réseaux, bases de données, gestion de projet. Spécialité RACA (Réalisation d'Applications : Conception et Architecture).",
   },
   {
-    date: "Été 2024",
-    role: "[Intitulé du poste]",
-    company: "[Entreprise]",
-    type: "job",
+    date: "2022 – 2024",
+    role: "Baccalauréat, Mention Assez Bien",
+    company: "Lycée Pablo Neruda · Dieppe",
+    type: "formation",
     description:
-      "Description du job d'été ou de l'expérience professionnelle. À remplacer par la vraie description.",
+      "Spécialité Mathématiques et NSI, option Maths Experte.",
   },
   {
-    date: "Été 2023",
-    role: "[Intitulé du poste]",
-    company: "[Entreprise]",
-    type: "job",
+    date: "Jan. 2020",
+    role: "Stage Administrateur Réseau",
+    company: "Lefebvre Consulting · La Vaupalière",
+    type: "stage",
     description:
-      "Description du job d'été ou de l'expérience professionnelle. À remplacer par la vraie description.",
+      "Réparation et maintenance de postes, mise en place d'un serveur.",
   },
 ];
 
@@ -67,12 +75,12 @@ export default function Experience() {
         </div>
 
         <div className="relative">
-          {/* Fil conducteur — ligne verticale dégradée */}
+          {/* Fil conducteur : ligne verticale dégradée */}
           <div
             className="absolute left-4 top-3 bottom-3 w-0.5"
             style={{
               background:
-                "linear-gradient(to bottom, transparent, #7c3aed 8%, #7c3aed 92%, transparent)",
+                "linear-gradient(to bottom, transparent, var(--color-primary) 8%, var(--color-primary) 92%, transparent)",
             }}
           />
 
