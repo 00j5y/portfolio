@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-3 leading-tight"
         >
           <span className="gradient-text">{displayed}</span>
           <span
@@ -74,6 +74,16 @@ export default function Hero() {
             }`}
           />
         </motion.h1>
+
+        {/* Spécialité */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.35 }}
+          className="text-sm font-medium text-muted tracking-wide mb-6"
+        >
+          Développeur d&apos;application · BUT Informatique spé RACA
+        </motion.p>
 
         {/* Sous-titre */}
         <motion.p

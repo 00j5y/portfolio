@@ -6,6 +6,9 @@ import Stack from "@/app/components/Stack";
 import Skills from "@/app/components/Skills";
 import Projects from "@/app/components/Projects";
 import Experience from "@/app/components/Experience";
+import Narrative from "@/app/components/Narrative";
+import Reflection from "@/app/components/Reflection";
+import References from "@/app/components/References";
 import Contact from "@/app/components/Contact";
 import Footer from "@/app/components/Footer";
 import SectionCTA from "@/app/components/ui/SectionCTA";
@@ -77,6 +80,12 @@ export default function Home() {
         </Suspense>
         <SectionCTA text="Mon parcours" href="#experience" />
         <Experience />
+        <SectionCTA text="Mes réalisations en détail" href="#narrative" />
+        <Narrative />
+        <SectionCTA text="Bilan de mes acquis" href="#reflection" />
+        <Reflection />
+        <SectionCTA text="Références" href="#references" />
+        <References />
         <SectionCTA text="Me contacter" href="#contact" />
         <Contact />
       </main>
