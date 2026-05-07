@@ -58,7 +58,7 @@ export default function Reflection() {
             Mes acquis en BUT2
           </h2>
           <p className="text-muted mt-3 max-w-xl mx-auto text-sm leading-relaxed">
-            Les quatre compétences du programme national — ce que j&apos;en ai retenu, et comment je les ai mises en pratique.
+            Les quatre compétences du programme national : ce que j&apos;en ai retenu, et comment je les ai mises en pratique.
           </p>
         </div>
 

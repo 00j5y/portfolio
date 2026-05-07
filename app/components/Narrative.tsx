@@ -8,7 +8,7 @@ const stories = [
     type: "Stage",
     typeColor: "bg-green-100 text-green-700",
     date: "Jan. – Mars 2026",
-    title: "Konexx — Plateforme de mise en relation",
+    title: "Konexx : Plateforme de mise en relation",
     company: "EI Charlotte Dimpre · Distanciel",
     context:
       "Charlotte Dimpre m'a contacté pour travailler sur Konexx, une plateforme qui connecte clients et prestataires. Trois mois en remote, en autonomie complète.",
@@ -24,7 +24,7 @@ const stories = [
     type: "Projet perso",
     typeColor: "bg-violet-100 text-violet-700",
     date: "2025",
-    title: "ai-mail-assistant — Résumé Gmail par IA",
+    title: "ai-mail-assistant : Résumé Gmail par IA",
     company: "Projet personnel",
     context:
       "Trier mes mails Gmail tous les matins me coûtait un temps que je ne voulais plus y mettre.",
@@ -39,8 +39,8 @@ const stories = [
   {
     type: "SAE BUT",
     typeColor: "bg-blue-100 text-blue-700",
-    date: "S3 — 2024",
-    title: "CampusGo — Plateforme de covoiturage",
+    date: "S3 · 2024",
+    title: "CampusGo : Plateforme de covoiturage",
     company: "IUT d'Amiens · Projet S3",
     context:
       "Situation d'Apprentissage et d'Évaluation du semestre 3. Construire une plateforme de covoiturage fonctionnelle, en équipe, dans un délai contraint.",
@@ -67,7 +67,7 @@ export default function Narrative() {
             Mes projets en détail
           </h2>
           <p className="text-muted mt-3 max-w-xl mx-auto text-sm leading-relaxed">
-            Trois projets construits de A à Z — ce que j&apos;ai résolu, comment, et ce que ça a donné.
+            Trois projets construits de A à Z : ce que j&apos;ai résolu, comment, et ce que ça a donné.
           </p>
         </div>
 
