@@ -8,10 +8,17 @@ import {
   FiGithub,
   FiLinkedin,
   FiDownload,
+  FiPhone,
 } from "react-icons/fi";
 import { FaDiscord } from "react-icons/fa";
 
 const contactLinks = [
+  {
+    icon: FiPhone,
+    label: "Téléphone",
+    value: "06 11 28 73 08",
+    href: "tel:+33611287308",
+  },
   {
     icon: FiMail,
     label: "Email",
