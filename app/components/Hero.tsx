@@ -82,8 +82,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Étudiant en BUT 2 Informatique, je conçois des applications web modernes
-          et j&apos;automatise ce qui peut l&apos;être.
+          Je conçois des applications web et j&apos;automatise ce qui le mérite.
         </motion.p>
 
         {/* CTA */}
