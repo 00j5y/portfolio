@@ -18,7 +18,7 @@ export default async function Projects() {
             Ce que j&apos;ai construit
           </h2>
           <p className="text-muted mt-3 max-w-xl mx-auto text-sm">
-            Projets récents depuis GitHub — mis à jour automatiquement.
+            Mes repos et les projets sur lesquels j&apos;ai contribué, mis à jour automatiquement.
           </p>
         </div>
 

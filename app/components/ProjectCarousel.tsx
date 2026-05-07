@@ -41,11 +41,18 @@ function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
     >
       {/* En-tête */}
       <div className="flex items-start justify-between gap-2">
-        <h3 className="font-semibold text-text group-hover:text-primary transition-colors truncate">
-          {repo.name}
-        </h3>
+        <div className="flex flex-col gap-1 min-w-0">
+          <h3 className="font-semibold text-text group-hover:text-primary transition-colors truncate">
+            {repo.name}
+          </h3>
+          {repo.isCollaboration && (
+            <span className="text-xs font-medium text-primary bg-primary-light px-2 py-0.5 rounded-full w-fit">
+              Collaboration
+            </span>
+          )}
+        </div>
         <FiExternalLink
-          className="shrink-0 text-muted group-hover:text-primary transition-colors"
+          className="shrink-0 text-muted group-hover:text-primary transition-colors mt-0.5"
           size={16}
         />
       </div>
