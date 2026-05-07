@@ -15,8 +15,8 @@ const contactLinks = [
   {
     icon: FiMail,
     label: "Email",
-    value: "contact@jaylheronde.fr",
-    href: "mailto:contact@jaylheronde.fr",
+    value: "jay.lheronde@gmail.com",
+    href: "mailto:jay.lheronde@gmail.com",
   },
   {
     icon: FiGithub,
@@ -51,7 +51,7 @@ export default function Contact() {
             Parlons-en
           </h2>
           <p className="text-muted mt-3 max-w-xl mx-auto text-sm">
-            Disponible par tous ces moyens — je réponds rapidement.
+            Disponible par tous ces moyens, je réponds rapidement.
           </p>
         </div>
 

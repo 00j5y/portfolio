@@ -28,15 +28,15 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <SectionTracker section="hero" />
-      {/* Fond — dégradé radial blanc → violet */}
+      {/* Fond : dégradé radial blanc vers vert */}
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%)",
+          background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, var(--color-primary-mid) 100%)",
         }}
       />
 
-      {/* Fond — grille de points avec masque radial (par-dessus le gradient) */}
+      {/* Fond : grille de points avec masque radial (par-dessus le gradient) */}
       <div
         className="absolute inset-0"
         style={{
@@ -82,7 +82,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Étudiant en BUT 2 Informatique — je conçois des applications web modernes
+          Étudiant en BUT 2 Informatique, je conçois des applications web modernes
           et j&apos;automatise ce qui peut l&apos;être.
         </motion.p>
 
