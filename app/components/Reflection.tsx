@@ -10,7 +10,7 @@ const competencies = [
     description:
       "Concevoir, développer et déployer une application fonctionnelle de bout en bout.",
     content:
-      "Sur Konexx, j'ai géré le projet en autonomie complète : architecture, développement frontend, base de données Supabase, et déploiement Docker. Sur CampusGo, j'ai livré une plateforme de covoiturage complète avec authentification, gestion de profils et réservations, dans un délai contraint.",
+      "Sur Konexx, j'ai géré le projet seul : architecture, frontend, base de données Supabase et déploiement Docker. Sur CampusGo, j'ai livré une plateforme de covoiturage complète avec authentification, gestion de profils et réservations.",
     examples: ["Konexx (Next.js + Supabase + Docker)", "CampusGo (Laravel + MySQL)"],
   },
   {
@@ -19,11 +19,11 @@ const competencies = [
     description:
       "Identifier et implémenter les structures de données et algorithmes les plus adaptés.",
     content:
-      "Sur CampusGo, j'ai conçu un algorithme de recherche de trajets avec filtrage multi-critères : correspondance partielle sur la localisation, contrainte temporelle (trajets dans le futur uniquement), et deux modes de tri selon que l'utilisateur cherche par heure de départ ou d'arrivée. J'ai aussi mis en place une déduplication des avis par cache avec fallback base de données. Sur ai-mail-assistant, j'ai implémenté un filtrage temporel sur une fenêtre de 24h avec normalisation du texte par regex avant envoi au LLM.",
+      "Sur CampusGo, j'ai conçu un moteur de recherche de trajets avec filtrage multi-critères et deux modes de tri. Sur ai-mail-assistant, j'ai implémenté un filtrage temporel sur 24h et une normalisation du texte par regex avant envoi au LLM.",
     examples: [
-      "Filtrage multi-critères trajets (CampusGo)",
+      "Filtrage multi-critères (CampusGo)",
       "Déduplication par cache (CampusGo)",
-      "Fenêtre temporelle + regex (ai-mail-assistant)",
+      "Regex + fenêtre 24h (ai-mail-assistant)",
     ],
   },
   {
@@ -32,12 +32,11 @@ const competencies = [
     description:
       "Mettre en place, configurer et déployer des services accessibles sur un réseau.",
     content:
-      "J'ai conteneurisé Konexx et ai-mail-assistant avec Docker, et configuré les variables d'environnement pour la production. Ce portfolio est déployé en continu sur Vercel via GitHub. En TP à l'IUT, j'ai pratiqué la virtualisation réseau : création et configuration de VMs en réseau, mise en place de services accessibles sur une architecture virtualisée.",
+      "J'ai conteneurisé Konexx et ai-mail-assistant avec Docker pour la production, et déployé ce portfolio en continu sur Vercel. En TP à l'IUT, j'ai configuré des VMs en réseau et déployé des services sur une architecture virtualisée.",
     examples: [
       "Docker (Konexx, ai-mail-assistant)",
-      "Vercel + CI/CD (portfolio)",
-      "Cron scheduling (ai-mail-assistant)",
-      "TP virtualisation réseau VMs (IUT Amiens)",
+      "Vercel CI/CD (portfolio)",
+      "TP virtualisation réseau (IUT Amiens)",
     ],
   },
   {
@@ -46,8 +45,8 @@ const competencies = [
     description:
       "Concevoir un schéma adapté, optimiser les requêtes, et mettre en place des mesures de sécurité.",
     content:
-      "Sur Konexx, j'ai utilisé Supabase avec Row Level Security pour contrôler les accès aux données par utilisateur. Sur CampusGo, j'ai conçu le schéma MySQL avec des migrations Laravel et mis en place l'authentification.",
-    examples: ["Supabase + RLS (Konexx)", "MySQL + migrations Laravel (CampusGo)"],
+      "Sur Konexx, j'ai configuré Supabase avec Row Level Security pour restreindre les accès par utilisateur. Sur CampusGo, j'ai conçu le schéma MySQL avec migrations Laravel, authentification et hashage des mots de passe.",
+    examples: ["Supabase + RLS (Konexx)", "MySQL + auth Laravel (CampusGo)"],
   },
 ];
 
