@@ -70,8 +70,8 @@ export default function About() {
           </div>
 
           {/* Photo */}
-          <div className="w-full aspect-square rounded-3xl bg-primary flex items-center justify-center select-none max-w-64 mx-auto md:max-w-none">
-            <span className="text-white/80 text-sm font-medium">Photo à venir</span>
+          <div className="w-full aspect-square rounded-3xl overflow-hidden max-w-64 mx-auto md:max-w-none">
+            <img src="/photo.jpg" alt="Jay L'héronde" className="w-full h-full object-cover" />
           </div>
         </div>
 

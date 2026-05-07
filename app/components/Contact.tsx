@@ -62,7 +62,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 max-w-4xl mx-auto">
           {contactLinks.map((link, i) => {
             const Icon = link.icon;
             const colClass =
@@ -87,7 +87,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-muted">{link.label}</p>
-                  <p className="text-sm font-medium text-text break-all">{link.value}</p>
+                  <p className="text-sm font-medium text-text whitespace-nowrap overflow-hidden">{link.value}</p>
                 </div>
               </motion.a>
             );
@@ -97,7 +97,7 @@ export default function Contact() {
         {/* Bouton CV */}
         <div className="text-center mt-10">
           <a
-            href="https://cv.jaylheronde.fr"
+            href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("cv_download")}
