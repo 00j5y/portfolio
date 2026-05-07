@@ -75,20 +75,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Citation */}
-        <figure className="my-16 max-w-3xl mx-auto text-center">
-          <span className="block text-6xl text-primary/20 font-serif leading-none mb-4">&ldquo;</span>
-          <blockquote className="text-lg sm:text-xl text-text font-medium leading-relaxed italic mb-6">
-            Do whatever you want to do in the morning, the thing that makes your heart pound out of joy,
-            and keeps your mind at ease. Once you do that, and keep doing it over and over again,
-            you are already ahead of everyone else. Because most people don&apos;t do what they want to do,
-            many do what they think they&apos;re supposed to do.
-          </blockquote>
-          <figcaption className="text-sm text-muted">
-            Osamason <span className="text-muted/50">(Amari Deshawn Adham Middleton)</span> · 2024
-          </figcaption>
-        </figure>
-
         {/* Passions */}
         <div className="grid sm:grid-cols-3 gap-4">
           {passions.map(({ icon: Icon, title, text }) => (
@@ -101,6 +87,20 @@ export default function About() {
             </div>
           ))}
         </div>
+
+        {/* Citation */}
+        <figure className="mt-16 max-w-3xl mx-auto text-center">
+          <span className="block text-6xl text-primary/20 font-serif leading-none mb-4">&ldquo;</span>
+          <blockquote className="text-lg sm:text-xl text-text font-medium leading-relaxed italic mb-6">
+            Do whatever you want to do in the morning, the thing that makes your heart pound out of joy,
+            and keeps your mind at ease. Once you do that, and keep doing it over and over again,
+            you are already ahead of everyone else. Because most people don&apos;t do what they want to do,
+            many do what they think they&apos;re supposed to do.
+          </blockquote>
+          <figcaption className="text-sm text-muted">
+            Osamason <span className="text-muted/50">(Amari Deshawn Adham Middleton)</span> · 2024
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
