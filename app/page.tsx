@@ -74,12 +74,12 @@ export default function Home() {
         <SectionCTA text="Voir ma stack technique" href="#stack" />
         <Stack />
         <Skills />
-        <SectionCTA text="Voir mes projets" href="#projects" />
+        <SectionCTA text="Mon parcours" href="#experience" />
+        <Experience />
+        <SectionCTA text="Mes projets" href="#projects" />
         <Suspense fallback={<ProjectsSkeleton />}>
           <Projects />
         </Suspense>
-        <SectionCTA text="Mon parcours" href="#experience" />
-        <Experience />
         <SectionCTA text="Mes réalisations en détail" href="#narrative" />
         <Narrative />
         <SectionCTA text="Bilan de mes acquis" href="#reflection" />
