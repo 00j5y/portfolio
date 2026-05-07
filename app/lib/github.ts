@@ -8,24 +8,42 @@ export interface GitHubRepo {
   forks_count: number;
   language: string | null;
   updated_at: string;
+  isCollaboration?: boolean;
 }
 
+const HEADERS = {
+  Accept: "application/vnd.github+json",
+  "X-GitHub-Api-Version": "2022-11-28",
+};
+
+const FETCH_OPTS = {
+  cache: "force-cache" as const,
+  next: { revalidate: 3600 },
+  headers: HEADERS,
+};
+
 export async function getGitHubRepos(username: string): Promise<GitHubRepo[]> {
-  const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100&type=public`,
-    {
-      cache: "force-cache",
-      next: { revalidate: 3600 },
-      headers: {
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    }
+  const [ownedRes, contribRes] = await Promise.all([
+    fetch(
+      `https://api.github.com/users/${username}/repos?sort=updated&per_page=100&type=public`,
+      FETCH_OPTS
+    ),
+    fetch(
+      `https://api.github.com/search/repositories?q=contributor:${username}+fork:false+is:public&sort=updated&per_page=20`,
+      FETCH_OPTS
+    ),
+  ]);
+
+  const owned: GitHubRepo[] = ownedRes.ok ? await ownedRes.json() : [];
+  const ownedFiltered = owned.filter((r) => r.name !== username);
+  const ownedIds = new Set(ownedFiltered.map((r) => r.id));
+
+  const contribData = contribRes.ok ? await contribRes.json() : { items: [] };
+  const collabs: GitHubRepo[] = ((contribData.items ?? []) as GitHubRepo[])
+    .filter((r) => !ownedIds.has(r.id))
+    .map((r) => ({ ...r, isCollaboration: true }));
+
+  return [...ownedFiltered, ...collabs].sort(
+    (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
   );
-
-  if (!res.ok) return [];
-
-  const repos: GitHubRepo[] = await res.json();
-
-  return repos.filter((r) => r.name !== "00j5y");
 }
