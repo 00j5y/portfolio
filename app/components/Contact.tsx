@@ -15,8 +15,8 @@ const contactLinks = [
   {
     icon: FiMail,
     label: "Email",
-    value: "jay.lheronde@gmail.com",
-    href: "mailto:jay.lheronde@gmail.com",
+    value: "contact@jaylheronde.fr",
+    href: "mailto:contact@jaylheronde.fr",
   },
   {
     icon: FiGithub,
