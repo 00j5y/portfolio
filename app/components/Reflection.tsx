@@ -18,8 +18,13 @@ const competencies = [
     title: "Choisir des algorithmes adaptés au problème",
     description:
       "Identifier et implémenter les structures de données et algorithmes les plus adaptés.",
-    content: null,
-    examples: [],
+    content:
+      "Sur CampusGo, j'ai conçu un algorithme de recherche de trajets avec filtrage multi-critères : correspondance partielle sur la localisation, contrainte temporelle (trajets dans le futur uniquement), et deux modes de tri selon que l'utilisateur cherche par heure de départ ou d'arrivée. J'ai aussi mis en place une déduplication des avis par cache avec fallback base de données. Sur ai-mail-assistant, j'ai implémenté un filtrage temporel sur une fenêtre de 24h avec normalisation du texte par regex avant envoi au LLM.",
+    examples: [
+      "Filtrage multi-critères trajets (CampusGo)",
+      "Déduplication par cache (CampusGo)",
+      "Fenêtre temporelle + regex (ai-mail-assistant)",
+    ],
   },
   {
     code: "C3",
@@ -27,11 +32,12 @@ const competencies = [
     description:
       "Mettre en place, configurer et déployer des services accessibles sur un réseau.",
     content:
-      "J'ai conteneurisé Konexx et ai-mail-assistant avec Docker, et configuré les variables d'environnement pour la production. Ce portfolio est déployé en continu sur Vercel via GitHub. J'ai aussi mis en place des cron jobs pour le bot Discord.",
+      "J'ai conteneurisé Konexx et ai-mail-assistant avec Docker, et configuré les variables d'environnement pour la production. Ce portfolio est déployé en continu sur Vercel via GitHub. En TP à l'IUT, j'ai pratiqué la virtualisation réseau : création et configuration de VMs en réseau, mise en place de services accessibles sur une architecture virtualisée.",
     examples: [
       "Docker (Konexx, ai-mail-assistant)",
       "Vercel + CI/CD (portfolio)",
       "Cron scheduling (ai-mail-assistant)",
+      "TP virtualisation réseau VMs (IUT Amiens)",
     ],
   },
   {
