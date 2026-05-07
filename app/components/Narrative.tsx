@@ -39,7 +39,7 @@ const stories = [
   {
     type: "SAE BUT",
     typeColor: "bg-blue-100 text-blue-700",
-    date: "S3 · 2024",
+    date: "S3 · Fin 2025 – Déb. 2026",
     title: "CampusGo : Plateforme de covoiturage",
     company: "IUT d'Amiens · Projet S3",
     context:
