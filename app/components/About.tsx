@@ -29,7 +29,7 @@ export default function About() {
               ce qu&apos;il est censé faire.
             </p>
             <p>
-              Je cherche une alternance à partir de septembre 2026. Basé à Amiens, permis B.
+              Je cherche une alternance pour septembre 2026, principalement en Île-de-France. Basé à Amiens.
             </p>
 
             <a

@@ -27,7 +27,7 @@ const categories = [
     icon: FiBox,
     title: "Architecture & Méthodologies",
     description: "Coder c'est bien, livrer c'est mieux. Je travaille avec les bons outils pour que ça tourne en prod.",
-    items: ["Docker & virtualisation", "Git & versionnage", "Linux", "Agile / Scrum"],
+    items: ["Docker & virtualisation", "Git & versionnage", "Linux", "Agile / Scrum", "Claude Code"],
   },
 ];
 
