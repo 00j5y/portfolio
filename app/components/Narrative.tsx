@@ -17,8 +17,8 @@ const stories = [
     stack: ["Next.js", "Supabase", "Docker", "TypeScript"],
     results:
       "Une plateforme fonctionnelle livrée dans les temps. Premier projet professionnel complet, sans filet.",
-    proofLabel: "Screenshots à venir",
-    link: null,
+    proofLabel: "Voir le site",
+    link: "https://konexx.fr/",
   },
   {
     type: "Projet perso",
