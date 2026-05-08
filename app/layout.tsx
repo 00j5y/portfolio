@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+  },
   title: "Jay L'héronde | Développeur web",
   description:
     "Portfolio de Jay L'héronde, étudiant en BUT 2 Informatique à la recherche d'une alternance. Développement web, automatisation et projets open source.",
