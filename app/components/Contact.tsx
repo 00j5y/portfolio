@@ -47,7 +47,7 @@ const contactLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-bg">
+    <section id="contact" className="py-24 bg-surface">
       <SectionTracker section="contact" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">

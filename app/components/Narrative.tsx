@@ -68,7 +68,7 @@ const stories = [
 
 export default function Narrative() {
   return (
-    <section id="narrative" className="py-24 bg-bg">
+    <section id="narrative" className="py-24 bg-surface">
       <SectionTracker section="narrative" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">

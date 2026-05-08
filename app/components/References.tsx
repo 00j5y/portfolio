@@ -26,8 +26,8 @@ export default function References() {
           className="max-w-2xl mx-auto glass-card rounded-2xl p-8"
         >
           <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center mb-6">
-            <div className="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center text-primary font-bold text-2xl shrink-0">
-              C
+            <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0">
+              <img src="/charlotte_dimpre_logo.jpeg" alt="Charlotte Dimpre" className="w-full h-full object-cover" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-text">Charlotte Dimpre</h3>
