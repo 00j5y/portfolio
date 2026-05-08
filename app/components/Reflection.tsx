@@ -10,7 +10,7 @@ const competencies = [
     description:
       "Concevoir, développer et déployer une application fonctionnelle de bout en bout.",
     content:
-      "Sur Konexx, j'ai géré le projet seul : architecture, frontend, base de données Supabase et déploiement Docker. Sur CampusGo, j'ai livré une plateforme de covoiturage complète avec authentification, gestion de profils et réservations.",
+      "Chez Konexx, le vrai blocage n'était pas technique. Charlotte parlait métier, je devais en sortir des specs exploitables, seul, sans personne pour valider. J'ai appris à questionner un client avant d'écrire la moindre ligne. Sur CampusGo, livrer une app complète en équipe sous contrainte m'a montré que les décisions d'architecture prises trop tard se paient toujours.",
     examples: ["Konexx (Next.js + Supabase + Docker)", "CampusGo (Laravel + MySQL)"],
   },
   {
@@ -19,7 +19,7 @@ const competencies = [
     description:
       "Identifier et implémenter les structures de données et algorithmes les plus adaptés.",
     content:
-      "Sur CampusGo, j'ai conçu un moteur de recherche de trajets avec filtrage multi-critères et deux modes de tri. Sur ai-mail-assistant, j'ai implémenté un filtrage temporel sur 24h et une normalisation du texte par regex avant envoi au LLM.",
+      "Ma première version du moteur de recherche sur CampusGo chargeait tout en base et filtrait côté client. Ça ne tenait pas. J'ai refait le filtrage en SQL avec deux modes de tri et un cache pour éviter les doublons. Sur ai-mail-assistant, j'ai dû choisir une fenêtre temporelle et normaliser les sujets par regex pour que le LLM reçoive un signal propre, pas du bruit.",
     examples: [
       "Filtrage multi-critères (CampusGo)",
       "Déduplication par cache (CampusGo)",
@@ -32,7 +32,7 @@ const competencies = [
     description:
       "Mettre en place, configurer et déployer des services accessibles sur un réseau.",
     content:
-      "J'ai conteneurisé Konexx et ai-mail-assistant avec Docker pour la production, et déployé ce portfolio en continu sur Vercel. En TP à l'IUT, j'ai configuré des VMs en réseau et déployé des services sur une architecture virtualisée.",
+      "Docker m'a causé plus de problèmes que prévu au départ sur Konexx. Variables d'environnement, volumes, réseau entre conteneurs : chaque erreur apprenait quelque chose. Une fois que ça tournait en prod, j'ai compris pourquoi on conteneurise. Ce portfolio tourne en CI/CD sur Vercel, chaque push déclenche un déploiement automatique. En TP à l'IUT, configurer un réseau de VMs a mis des mots concrets sur des concepts que je n'avais vus que sur du papier.",
     examples: [
       "Docker (Konexx, ai-mail-assistant)",
       "Vercel CI/CD (portfolio)",
@@ -45,7 +45,7 @@ const competencies = [
     description:
       "Concevoir un schéma adapté, optimiser les requêtes, et mettre en place des mesures de sécurité.",
     content:
-      "Sur Konexx, j'ai configuré Supabase avec Row Level Security pour restreindre les accès par utilisateur. Sur CampusGo, j'ai conçu le schéma MySQL avec migrations Laravel, authentification et hashage des mots de passe.",
+      "Sur Konexx, ma première configuration RLS Supabase laissait passer des requêtes qu'elle n'aurait pas dû. J'ai dû relire la doc, tester cas par cas et refactorer les policies. Sur CampusGo, j'ai conçu le schéma MySQL avec migrations et mis en place l'authentification avec hashage. La sécurité en base, ça ne se rajoute pas à la fin.",
     examples: ["Supabase + RLS (Konexx)", "MySQL + auth Laravel (CampusGo)"],
   },
 ];

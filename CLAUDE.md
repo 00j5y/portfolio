@@ -81,3 +81,8 @@ Format : `{TYPE} [SUJET] description`
 7. **Contact** — Email, LinkedIn, GitHub, Discord, Telegram, CV téléchargeable
 
 Entre chaque section : **CTA** pour inciter les recruteurs à passer à l'action.
+
+### Texte généré
+
+Pour tout les textes que tu génères pour mettre dans le contenu, utilise le skill /humanizer pour écrire de manière humaine
+Banni les — de ton vocabulaire, strictement interdit

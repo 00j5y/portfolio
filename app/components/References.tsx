@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FiLinkedin } from "react-icons/fi";
 import SectionTracker from "@/app/components/ui/SectionTracker";
 
 export default function References() {
@@ -40,7 +41,15 @@ export default function References() {
             sur le projet et de ma capacité à livrer dans les délais en remote.
           </p>
 
-          <p className="text-xs text-muted italic">Contact disponible sur demande</p>
+          <a
+            href="https://www.linkedin.com/in/charlotte-dimpre/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+          >
+            <FiLinkedin size={16} />
+            Voir son profil LinkedIn
+          </a>
         </motion.div>
       </div>
     </section>

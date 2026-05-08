@@ -16,14 +16,18 @@ const stories = [
       "J'ai construit le frontend avec Next.js, branché la base de données Supabase et containerisé l'application avec Docker pour le déploiement. Du premier composant à la mise en prod.",
     stack: ["Next.js", "Supabase", "Docker", "TypeScript"],
     results:
-      "Une plateforme fonctionnelle livrée dans les temps. Premier projet professionnel complet, sans filet.",
+      "Plateforme livrée en production, accessible en ligne. Ce que je referais différemment : mieux cadrer les specs dès le départ plutôt que d'itérer sur des ambiguïtés en cours de route.",
     proofLabel: "Voir le site",
     link: "https://konexx.fr/",
+    images: [
+      { src: "/konexx-hero.png", pos: "object-top", caption: "Interface publique — mise en relation clients et prestataires" },
+      { src: "/konexx-crm.png", pos: "object-top", caption: "Dashboard CRM admin — accès sécurisés via RLS Supabase" },
+    ],
   },
   {
     type: "Projet perso",
     typeColor: "bg-violet-100 text-violet-700",
-    date: "2025",
+    date: "2025 – 2026",
     title: "ai-mail-assistant : Résumé Gmail par IA",
     company: "Projet personnel",
     context:
@@ -35,6 +39,10 @@ const stories = [
       "4 étoiles sur GitHub. Le script tourne chaque jour à 11h. Je ne trie plus mes mails à la main.",
     proofLabel: "Voir sur GitHub",
     link: "https://github.com/00j5y/ai-mail-assistant",
+    images: [
+      { src: "/aimail-discord.png", pos: "object-top", fit: "object-cover", caption: "Résumé quotidien livré en DM Discord, catégorisé par priorité" },
+      { src: "/aimail-terminal.png", pos: "object-center", bg: "bg-gray-900", fit: "object-contain", caption: "Bot en production — tourne chaque jour à 11h depuis janvier 2026" },
+    ],
   },
   {
     type: "SAE BUT",
@@ -48,9 +56,13 @@ const stories = [
       "Backend en Laravel avec PHP, frontend en Blade + Vite, base de données MySQL avec migrations. Authentification, gestion de profils, création et réservation de trajets.",
     stack: ["Laravel", "PHP", "MySQL", "Vite", "Node.js"],
     results:
-      "Application complète rendue dans les délais, fonctionnelle et documentée.",
+      "Projet rendu dans les délais. Le moteur de recherche avec carte et le filtrage multi-critères ont bien tenu. Ce que je referais différemment : poser le schéma de base de données avant de toucher aux vues.",
     proofLabel: "Voir sur GitHub",
     link: "https://github.com/00j5y/campusgo",
+    images: [
+      { src: "/campusgo-home.png", pos: "object-top", caption: "Page d'accueil — plateforme de covoiturage pour l'IUT d'Amiens" },
+      { src: "/campusgo-search.png", pos: "object-center", caption: "Moteur de recherche avec carte et filtrage multi-critères" },
+    ],
   },
 ];
 
@@ -111,6 +123,19 @@ export default function Narrative() {
                   <p className="text-sm text-muted leading-relaxed">{story.results}</p>
                 </div>
               </div>
+
+              {"images" in story && story.images && (
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {(story.images as { src: string; pos: string; bg?: string; fit?: string; caption?: string }[]).map(({ src, pos, bg, fit, caption }) => (
+                    <div key={src} className="flex flex-col gap-1.5">
+                      <div className={`aspect-video overflow-hidden rounded-xl border border-border ${bg ?? ""}`}>
+                        <img src={src} alt={story.title} className={`w-full h-full ${fit ?? "object-cover"} ${pos}`} />
+                      </div>
+                      {caption && <p className="text-xs text-muted text-center leading-snug">{caption}</p>}
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex flex-wrap gap-2">
