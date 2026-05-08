@@ -1,11 +1,29 @@
+import { FiActivity, FiMusic, FiShoppingBag } from "react-icons/fi";
 import SectionTracker from "@/app/components/ui/SectionTracker";
+
+const passions = [
+  {
+    icon: FiActivity,
+    title: "Musculation",
+    text: "5 séances par semaine. Je lis des études pour progresser efficacement, pas juste les forums. Ce que ça m'a appris sur la discipline, je le retrouve dans la façon dont j'aborde le code.",
+  },
+  {
+    icon: FiMusic,
+    title: "Musique & production",
+    text: "Beaucoup de concerts, des styles très variés. Je produis des instrumentaux sur FL Studio et j'enregistre en studio avec un ami ingénieur son. J'écoute beaucoup, je crée un peu, j'apprends encore.",
+  },
+  {
+    icon: FiShoppingBag,
+    title: "Mode",
+    text: "Je suis les fashion weeks de près, surtout les marques asiatiques. J'aime le layering, les superpositions qui changent le rendu d'une tenue. Je travaille sur ma propre marque de prêt-à-porter.",
+  },
+];
 
 export default function About() {
   return (
     <section id="about" className="py-24 bg-surface">
       <SectionTracker section="about" />
       <div className="max-w-6xl mx-auto px-6">
-        {/* En-tête */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
             À propos
@@ -15,18 +33,28 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           {/* Texte */}
           <div className="space-y-5 text-muted leading-relaxed">
             <p>
-              En deuxième année de BUT Informatique à l&apos;IUT d&apos;Amiens, je code pas mal de
-              mon temps libre. Des projets perso, des trucs pour automatiser ce que je fais à la
-              main, parfois juste pour voir si c&apos;est faisable.
+              En deuxième année de BUT Informatique à l&apos;IUT d&apos;Amiens, spécialité
+              Réalisation d&apos;Applications : Conception et Architecture. Je code depuis le lycée,
+              d&apos;abord pour comprendre comment ça marche, maintenant parce que c&apos;est devenu
+              ma façon de résoudre les problèmes.
             </p>
             <p>
-              Ce que j&apos;aime dans le dev, c&apos;est partir d&apos;une idée qui tient en une
-              phrase et finir avec quelque chose qui tourne. Pas forcément parfait, mais qui fait
-              ce qu&apos;il est censé faire.
+              Ce que j&apos;aime dans le dev, c&apos;est l&apos;aller-retour entre l&apos;idée et
+              l&apos;exécution. Partir d&apos;une phrase, finir avec quelque chose qui tourne. Pas
+              forcément parfait, mais qui fait ce qu&apos;il est censé faire.
+            </p>
+            <p>
+              La discipline, je l&apos;ai apprise à la salle. Cinq séances par semaine, je lis des
+              études pour progresser efficacement. J&apos;applique la même logique au code :
+              mesurer, comprendre le pourquoi, itérer.
+            </p>
+            <p>
+              Mon seul défaut avouable : je passe trop de temps à peaufiner l&apos;interface alors
+              que la logique est bouclée depuis un moment. Perfectionnisme, j&apos;assume.
             </p>
             <p>
               Je cherche une alternance pour septembre 2026, principalement en Île-de-France. Basé à Amiens.
@@ -42,10 +70,37 @@ export default function About() {
           </div>
 
           {/* Photo */}
-          <div className="w-full aspect-square rounded-3xl bg-primary flex items-center justify-center select-none max-w-64 mx-auto md:max-w-none">
-            <span className="text-white/80 text-sm font-medium">Photo à venir</span>
+          <div className="w-full aspect-square rounded-3xl overflow-hidden max-w-64 mx-auto md:max-w-none">
+            <img src="/photo.jpg" alt="Jay L'héronde" className="w-full h-full object-cover" />
           </div>
         </div>
+
+        {/* Passions */}
+        <div className="grid sm:grid-cols-3 gap-4">
+          {passions.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="glass-card rounded-2xl p-5">
+              <div className="w-9 h-9 rounded-xl bg-primary-light flex items-center justify-center text-primary mb-3">
+                <Icon size={18} />
+              </div>
+              <h3 className="font-semibold text-text text-sm mb-1">{title}</h3>
+              <p className="text-xs text-muted leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Citation */}
+        <figure className="mt-16 max-w-3xl mx-auto text-center">
+          <span className="block text-6xl text-primary/20 font-serif leading-none mb-4">&ldquo;</span>
+          <blockquote className="text-lg sm:text-xl text-text font-medium leading-relaxed italic mb-6">
+            Do whatever you want to do in the morning, the thing that makes your heart pound out of joy,
+            and keeps your mind at ease. Once you do that, and keep doing it over and over again,
+            you are already ahead of everyone else. Because most people don&apos;t do what they want to do,
+            many do what they think they&apos;re supposed to do.
+          </blockquote>
+          <figcaption className="text-sm text-muted">
+            Osamason <span className="text-muted/50">(Amari Deshawn Adham Middleton)</span> · 2024
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

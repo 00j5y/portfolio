@@ -8,10 +8,17 @@ import {
   FiGithub,
   FiLinkedin,
   FiDownload,
+  FiPhone,
 } from "react-icons/fi";
 import { FaDiscord } from "react-icons/fa";
 
 const contactLinks = [
+  {
+    icon: FiPhone,
+    label: "Téléphone",
+    value: "06 11 28 73 08",
+    href: "tel:+33611287308",
+  },
   {
     icon: FiMail,
     label: "Email",
@@ -55,9 +62,13 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 max-w-4xl mx-auto">
           {contactLinks.map((link, i) => {
             const Icon = link.icon;
+            const colClass =
+              i < 3 ? "sm:col-span-2" :
+              i === 3 ? "sm:col-start-2 sm:col-span-2" :
+              "sm:col-span-2";
             return (
               <motion.a
                 key={link.label}
@@ -69,14 +80,14 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 hover:bg-primary-light/30 transition-all duration-200 group"
+                className={`glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 hover:bg-primary-light/30 transition-all duration-200 group ${colClass}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
                   <Icon size={18} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-muted">{link.label}</p>
-                  <p className="text-sm font-medium text-text break-all">{link.value}</p>
+                  <p className="text-sm font-medium text-text whitespace-nowrap overflow-hidden">{link.value}</p>
                 </div>
               </motion.a>
             );
@@ -86,7 +97,7 @@ export default function Contact() {
         {/* Bouton CV */}
         <div className="text-center mt-10">
           <a
-            href="https://cv.jaylheronde.fr"
+            href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("cv_download")}
