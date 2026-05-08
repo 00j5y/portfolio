@@ -82,7 +82,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.35 }}
           className="text-sm font-medium text-muted tracking-wide mb-6"
         >
-          Développeur d&apos;application · BUT Informatique spé RACA
+          Développeur fullstack & automatisation IA · BUT Informatique spé RACA
         </motion.p>
 
         {/* Sous-titre */}
@@ -90,7 +90,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-8 leading-relaxed"
         >
           Je conçois des applications web et j&apos;automatise ce qui le mérite.
         </motion.p>
