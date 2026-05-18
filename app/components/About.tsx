@@ -1,21 +1,16 @@
-import { FiActivity, FiMusic, FiShoppingBag } from "react-icons/fi";
+import { FiActivity, FiShoppingBag } from "react-icons/fi";
 import SectionTracker from "@/app/components/ui/SectionTracker";
 
 const passions = [
   {
     icon: FiActivity,
     title: "Musculation",
-    text: "5 séances par semaine. Je lis des études pour progresser efficacement, pas juste les forums. Ce que ça m'a appris sur la discipline, je le retrouve dans la façon dont j'aborde le code.",
-  },
-  {
-    icon: FiMusic,
-    title: "Musique & production",
-    text: "Beaucoup de concerts, des styles très variés. Je produis des instrumentaux sur FL Studio et j'enregistre en studio avec un ami ingénieur son. J'écoute beaucoup, je crée un peu, j'apprends encore.",
+    text: "5 séances par semaine, parce que c'est pas facile et que c'est pour ça que ça compte. Je lis les études plutôt que de suivre les gourous. Ce que j'ai appris là, c'est que faire les choses bien demande de la discipline face à ce qui repousse. J'applique la même logique au code : finir une feature même quand c'est laborieux, mesurer avant d'optimiser, itérer.",
   },
   {
     icon: FiShoppingBag,
     title: "Mode",
-    text: "Je suis les fashion weeks de près, surtout les marques asiatiques. J'aime le layering, les superpositions qui changent le rendu d'une tenue. Je travaille sur ma propre marque de prêt-à-porter.",
+    text: "Je conçois des vêtements, et quand tu construis une marque, tu crées un univers : une ambiance, une palette, un message qui marque. C'est exactement ce que je fais sur chaque site web. Pas de copie des tendances. Une identité unique, une vraie présence. La même logique appliquée à deux domaines : créer une expérience qui reste.",
   },
 ];
 
@@ -76,7 +71,7 @@ export default function About() {
         </div>
 
         {/* Passions */}
-        <div className="grid sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {passions.map(({ icon: Icon, title, text }) => (
             <div key={title} className="glass-card rounded-2xl p-5">
               <div className="w-9 h-9 rounded-xl bg-primary-light flex items-center justify-center text-primary mb-3">

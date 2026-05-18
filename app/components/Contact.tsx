@@ -5,7 +5,6 @@ import { track } from "@vercel/analytics";
 import SectionTracker from "@/app/components/ui/SectionTracker";
 import {
   FiMail,
-  FiGithub,
   FiLinkedin,
   FiDownload,
   FiPhone,
@@ -22,14 +21,8 @@ const contactLinks = [
   {
     icon: FiMail,
     label: "Email",
-    value: "contact@jaylheronde.fr",
-    href: "mailto:contact@jaylheronde.fr",
-  },
-  {
-    icon: FiGithub,
-    label: "GitHub",
-    value: "00j5y",
-    href: "https://github.com/00j5y",
+    value: "jay.lheronde@gmail.com",
+    href: "mailto:jay.lheronde@gmail.com",
   },
   {
     icon: FiLinkedin,
@@ -62,13 +55,9 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
           {contactLinks.map((link, i) => {
             const Icon = link.icon;
-            const colClass =
-              i < 3 ? "sm:col-span-2" :
-              i === 3 ? "sm:col-start-2 sm:col-span-2" :
-              "sm:col-span-2";
             return (
               <motion.a
                 key={link.label}
@@ -80,7 +69,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 hover:bg-primary-light/30 transition-all duration-200 group ${colClass}`}
+                className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 hover:bg-primary-light/30 transition-all duration-200 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
                   <Icon size={18} />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiLayout, FiServer, FiTerminal, FiBox } from "react-icons/fi";
+import { FiLayout, FiServer, FiTerminal, FiBox, FiZap } from "react-icons/fi";
 import SectionTracker from "@/app/components/ui/SectionTracker";
 
 const categories = [
@@ -9,7 +9,7 @@ const categories = [
     icon: FiLayout,
     title: "Développement Front-end",
     description: "J'aime construire des interfaces qui respirent : fluides, accessibles et agréables à utiliser.",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
   },
   {
     icon: FiServer,
@@ -27,7 +27,13 @@ const categories = [
     icon: FiBox,
     title: "Architecture & Méthodologies",
     description: "Coder c'est bien, livrer c'est mieux. Je travaille avec les bons outils pour que ça tourne en prod.",
-    items: ["Docker & virtualisation", "Git & versionnage", "Linux", "Agile / Scrum", "Claude Code"],
+    items: ["Docker & virtualisation", "Git & versionnage", "VSCode", "Linux", "Vercel"],
+  },
+  {
+    icon: FiZap,
+    title: "Outils IA",
+    description: "Je travaille avec plusieurs assistants IA pour augmenter ma productivité et explorer de nouvelles approches.",
+    items: ["Claude Code", "Gemini CLI", "Antigravity"],
   },
 ];
 
@@ -46,7 +52,7 @@ export default function Skills() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {categories.map((cat, i) => {
+          {categories.slice(0, 4).map((cat, i) => {
             const Icon = cat.icon;
             return (
               <motion.div
@@ -71,6 +77,43 @@ export default function Skills() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.25, delay: i * 0.1 + j * 0.06 }}
+                      className="px-3 py-1 rounded-full text-xs font-medium bg-primary-light text-primary border border-primary/10"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div className="flex justify-center mt-6">
+          {categories.slice(4).map((cat, i) => {
+            const Icon = cat.icon;
+            return (
+              <motion.div
+                key={cat.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                whileHover={{ y: -4 }}
+                className="glass-card rounded-2xl p-6 hover:shadow-lg hover:shadow-primary/10 transition-shadow duration-300 max-w-sm w-full"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-primary mb-4">
+                  <Icon size={20} />
+                </div>
+                <h3 className="font-semibold text-text mb-1">{cat.title}</h3>
+                <p className="text-xs text-muted leading-relaxed mb-4">{cat.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((item, j) => (
+                    <motion.span
+                      key={item}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.25, delay: 0.4 + j * 0.06 }}
                       className="px-3 py-1 rounded-full text-xs font-medium bg-primary-light text-primary border border-primary/10"
                     >
                       {item}

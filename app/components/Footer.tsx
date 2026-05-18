@@ -7,10 +7,10 @@ export default function Footer() {
         <span>© {year} Jay L&apos;héronde</span>
         <div className="flex items-center gap-5">
           <a
-            href="mailto:contact@jaylheronde.fr"
+            href="mailto:jay.lheronde@gmail.com"
             className="hover:text-primary transition-colors"
           >
-            contact@jaylheronde.fr
+            jay.lheronde@gmail.com
           </a>
           <a
             href="https://www.linkedin.com/in/jay-lheronde/"
