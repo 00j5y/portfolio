@@ -82,7 +82,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.35 }}
           className="text-sm font-medium text-muted tracking-wide mb-6"
         >
-          Développeur fullstack & automatisation IA · BUT Informatique spé RACA
+          Développeur web fullstack · BUT Informatique spécialité RACA
         </motion.p>
 
         {/* Sous-titre */}
